@@ -31,5 +31,4 @@ void main()
 	{
 		cout << "equal" << '\n';
 	}
-	system("PAUSE");
 }
