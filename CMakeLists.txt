@@ -11,6 +11,7 @@ endif()
 
 enable_testing()
 
-add_executable(main.cpp ${SOURCES})
+add_executable(main
+main.cpp ${SOURCES})
 
 add_test(NAME ${PROJECT_NAME} COMMAND main)
