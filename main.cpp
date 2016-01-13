@@ -215,7 +215,7 @@ void result()
 	{
 		cout << "ALL TEST PASSED" << '\n';
 	}
-	system("PAUSE");//del this string 
+	//system("PAUSE");//del this string 
 };
 
 void main()
