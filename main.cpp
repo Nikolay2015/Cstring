@@ -218,7 +218,7 @@ void result()
 	//system("PAUSE");//del this string 
 };
 
-void main()
+int main()
 {
 	TEST_1();//= () 
 	TEST_2();//operator tests
@@ -227,4 +227,5 @@ void main()
 	TEST_5();//tests of +
 	TEST_6();// < == <= >= >
 	result();
+	return 0;
 }
