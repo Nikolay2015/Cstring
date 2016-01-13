@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(Vector CXX)
+project(Main CXX)
 
 if (MSVC)
     add_definitions(/W4)
