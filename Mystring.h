@@ -2,8 +2,10 @@
 #define CPP_STRING_H
 #include <iostream>
 #include <stdexcept>
-#include <string>
+#include <string.h>
 
+ using namespace std;
+ 
 class String
 {
 public:
@@ -17,7 +19,7 @@ public:
 
 	String(const char *str)
 	{
-		size_ = std::strlen(str);
+		size_ =  strlen(str);
 		str_ = new char[size_ + 1];
 		while (*(str_++) = *(str++));
 		str_ = (str_ - size_ - 1);//
@@ -113,7 +115,7 @@ public:
 
 	String &operator+=(const char * suffix)
 	{
-		unsigned size = std::strlen(suffix);
+		unsigned size = strlen(suffix);
 		const char *temp_suffix = suffix;
 		char *str;
 		char *s = str_;
@@ -143,8 +145,8 @@ public:
 
 	void swap(String &other)
 	{
-		std::swap(str_, other.str_);
-		std::swap(size_, other.size_);
+		 swap(str_, other.str_);
+		 swap(size_, other.size_);
 	};
 
 	char &operator[](unsigned pos)
@@ -161,7 +163,7 @@ public:
 	{
 		if (pos >= size_)
 		{
-			throw std::out_of_range("position > your size");
+			throw  out_of_range("position > your size");
 		}
 		char *temp_pos = (str_ + pos);
 		return *(temp_pos);
@@ -177,7 +179,7 @@ public:
 		return size_;
 	};
 
-	friend std::ostream &operator<<(std::ostream &stream, const String &s)
+	friend  ostream &operator<<( ostream &stream, const String &s)
 	{
 		stream << s.data();
 		return stream;
