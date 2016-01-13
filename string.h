@@ -1,6 +1,5 @@
 #ifndef CPP_STRING_H
 #define CPP_STRING_H
-#include <string>
 #include <iostream>
 
 class String
@@ -254,12 +253,10 @@ public:
 		{
 			if (*(lhs.str_ + i) < *(rhs.str_ + i)) 
 			{
-				//std::cout << lhs.str_ + i << '\n';
 				return true;
 			}
 			else if (*(lhs.str_ + i) > *(rhs.str_ + i)) 
 			{
-				//std::cout << lhs.str_ + i << '\n';
 				return false;
 			}
 		}

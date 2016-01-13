@@ -1,6 +1,5 @@
 #include "string.h"
 #include <iostream>
-#include <String>
 
 using namespace std;
 const unsigned number_tests = 24;
@@ -19,7 +18,6 @@ void TEST_1()
 
 	if (B == "Hello")
 	{
-		
 		test_mas[1] = 1;
 	}
 
@@ -222,7 +220,7 @@ void result()
 
 void main()
 {
-	TEST_1();
+	TEST_1();//= () 
 	TEST_2();//operator tests
 	TEST_3();//+= tests
 	TEST_4();//swap and []
