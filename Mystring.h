@@ -20,7 +20,7 @@ public:
 		size_ = std::strlen(str);
 		str_ = new char[size_ + 1];
 		while (*(str_++) = *(str++));
-		str_ = (str_ - size_ - 1);
+		str_ = (str_ - size_ - 1);//
 	};
 
 	String(const char *str, unsigned count)
