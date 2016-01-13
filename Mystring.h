@@ -143,7 +143,7 @@ public:
 		return *this;
 	};
 
-	void swap(String &other)
+	void myswap(String &other)
 	{
 		 swap(str_, other.str_);
 		 swap(size_, other.size_);

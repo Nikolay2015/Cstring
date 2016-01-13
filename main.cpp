@@ -104,7 +104,7 @@ void TEST_4()
 	String A("LIVE");
 	String B("EVIL");
 
-	A.swap(B);
+	A.myswap(B);
 	if ((B == "LIVE") && (A == "EVIL"))
 	{
 		test_mas[11] = 1;
