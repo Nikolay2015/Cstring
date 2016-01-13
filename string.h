@@ -1,6 +1,7 @@
 #ifndef CPP_STRING_H
 #define CPP_STRING_H
 #include <iostream>
+#include <stdexcept>
 
 class String
 {
