@@ -39,6 +39,7 @@ public:
 			str_temp = (str_temp + 1);
 		}
 		temp[count] = '\0';
+		size_ = count;
 		str_ = temp;
 	};
 
@@ -50,6 +51,7 @@ public:
 			temp[i] = ch;
 		}
 		temp[count] = '\0';
+		size_ = count;
 		str_ = temp;
 	};
 
@@ -92,6 +94,7 @@ public:
 		}
 		temp[other.size_] = '\0';
 		str_ = temp;
+		return *this;
 	};
 
 	String &operator =(String &&other)
@@ -100,6 +103,7 @@ public:
 		str_ = other.str_;
 		other.size_ = 0;
 		other.str_ = NULL;
+		return *this;
 	};
 
 	String &operator +=(const String &suffix)
@@ -120,7 +124,7 @@ public:
 		}
 		delete[] str_;
 		*temp = '\0';
-		size_ += suffix.size_ + 1;
+		size_ += suffix.size_;
 		str_ = str;
 		return *this;
 	};
@@ -137,7 +141,7 @@ public:
 		char *str;
 		char *s = str_;
 		char *temp = str = new char[size_ + size + 1];
-		for (unsigned i = 0; i < size_ - 1; i++)// copy of str_ 
+		for (unsigned i = 0; i < size_; i++)// copy of str_ 
 		{
 				*(temp++) = *(s++);
 		}
@@ -232,7 +236,11 @@ public:
 			}
 			return true;
 		}
-		return false;
+		else
+		{ 
+			return false;
+		}
+		
 	};
 
 	friend bool operator <(const String &lhs, const String &rhs) 
@@ -246,18 +254,20 @@ public:
 		{
 			if (*(lhs.str_ + i) < *(rhs.str_ + i)) 
 			{
+				//std::cout << lhs.str_ + i << '\n';
 				return true;
 			}
 			else if (*(lhs.str_ + i) > *(rhs.str_ + i)) 
 			{
+				//std::cout << lhs.str_ + i << '\n';
 				return false;
 			}
 		}
 		return false;
 	};
+
 private :
 	unsigned int size_;
-	unsigned int *pos_;
 	char *str_;
 };
 
@@ -273,7 +283,7 @@ String operator +(const String &lhs, const char *rhs)
 
 String operator +(const char *lhs, const String &rhs)
 {
-	return String(rhs) += lhs;
+	return String(lhs) += rhs;
 };
 
 bool operator !=(const String &lhs, const String &rhs)
